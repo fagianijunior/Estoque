@@ -1,0 +1,31 @@
+<h1>Listing material_storage_locations</h1>
+
+<table>
+  <tr>
+    <th>Material</th>
+    <th>Storage location</th>
+    <th>Batch</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @material_storage_locations.each do |material_storage_location| %>
+  <tr>
+    <td><%= material_storage_location.material_id %></td>
+    <td><%= material_storage_location.storage_location_id %></td>
+    <td><%= material_storage_location.batch_id %></td>
+    <td><%= material_storage_location.quantity %></td>
+    <td><%= material_storage_location.price %></td>
+    <td><%= link_to 'Show', material_storage_location %></td>
+    <td><%= link_to 'Edit', edit_material_storage_location_path(material_storage_location) %></td>
+    <td><%= link_to 'Destroy', material_storage_location, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Material storage location', new_material_storage_location_path %>

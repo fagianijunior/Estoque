@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Material:</b>
+  <%= @material_storage_location.material_id %>
+</p>
+
+<p>
+  <b>Storage location:</b>
+  <%= @material_storage_location.storage_location_id %>
+</p>
+
+<p>
+  <b>Batch:</b>
+  <%= @material_storage_location.batch_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @material_storage_location.quantity %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @material_storage_location.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_material_storage_location_path(@material_storage_location) %> |
+<%= link_to 'Back', material_storage_locations_path %>

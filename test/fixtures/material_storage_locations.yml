@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  material_id: 1
+  storage_location_id: 1
+  batch_id: 1
+  quantity: 1.5
+  price: 1.5
+
+two:
+  material_id: 1
+  storage_location_id: 1
+  batch_id: 1
+  quantity: 1.5
+  price: 1.5

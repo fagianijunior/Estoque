@@ -1,4 +1,14 @@
 Estoque::Application.routes.draw do
+  resources :material_storage_locations
+
+  resources :batches
+
+  resources :storage_locations
+
+  resources :materials
+
+  resources :units
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
