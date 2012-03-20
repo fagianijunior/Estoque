@@ -44,7 +44,7 @@ class StorageLocationsController < ApplicationController
     @storage_location.destroy
 
     respond_to do |format|
-      format.html { redirect_to storage_locations_url }
+      format.html { redirect_to storage_locations_url, notice: "'#{@storage_location.name}' foi deletado com sucesso!" }
       format.json { head :no_content }
     end
   end

@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<h1>Controle de Estoque</h1>
+<%= render 'layouts/nav' %>
+<% if !flash.nil? %>
+		<% flash.each do |key, value|  %>
+          <%= content_tag(:div, value, class: "flash #{key}") %>
+        <% end %>
+<% end %>
 <div class="content">
 	<%= yield %>
 </div>
 </body>
+<footer>
+	<p>Controle de estoque em Rails 3 - MAR/2012</p>
+</footer>
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" %>
 </html>

@@ -28,7 +28,7 @@ class UnitsController < ApplicationController
 
     respond_to do |format|
       if @unit.save
-        format.html { redirect_to units_url }
+        format.html { redirect_to units_url, notice: "Unidade criada com sucesso!" }
         format.json { render json: @unit, status: :created, location: @unit }
       else
         format.html { render action: "new" }
@@ -44,7 +44,7 @@ class UnitsController < ApplicationController
     @unit.destroy
 
     respond_to do |format|
-      format.html { redirect_to units_url }
+      format.html { redirect_to units_url, notice: "'#{@unit.name}' foi deletado com sucesso!" }
       format.json { head :no_content }
     end
   end

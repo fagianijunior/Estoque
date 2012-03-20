@@ -76,7 +76,7 @@ class MaterialsController < ApplicationController
     @material.destroy
 
     respond_to do |format|
-      format.html { redirect_to materials_url }
+      format.html { redirect_to materials_url, notice: "'#{@material.name}' foi deletado com sucesso!" }
       format.json { head :no_content }
     end
   end

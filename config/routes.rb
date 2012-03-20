@@ -1,13 +1,15 @@
 Estoque::Application.routes.draw do
+  root to: 'static_pages#inicio'
+
   resources :material_storage_locations
 
   resources :batches
 
-  resources :storage_locations
+  resources :storage_locations, only: [:new, :create, :destroy, :index]
 
   resources :materials
 
-  resources :units
+  resources :units, only: [:new, :create, :destroy, :index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
