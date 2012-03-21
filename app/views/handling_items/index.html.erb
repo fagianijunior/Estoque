@@ -1,0 +1,29 @@
+<h1>Listing handling_items</h1>
+
+<table>
+  <tr>
+    <th>Material handling</th>
+    <th>Material</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @handling_items.each do |handling_item| %>
+  <tr>
+    <td><%= handling_item.material_handling_id %></td>
+    <td><%= handling_item.material_id %></td>
+    <td><%= handling_item.quantity %></td>
+    <td><%= handling_item.price %></td>
+    <td><%= link_to 'Show', handling_item %></td>
+    <td><%= link_to 'Edit', edit_handling_item_path(handling_item) %></td>
+    <td><%= link_to 'Destroy', handling_item, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Handling item', new_handling_item_path %>

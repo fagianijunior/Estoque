@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Material handling:</b>
+  <%= @handling_item.material_handling_id %>
+</p>
+
+<p>
+  <b>Material:</b>
+  <%= @handling_item.material_id %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @handling_item.quantity %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @handling_item.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_handling_item_path(@handling_item) %> |
+<%= link_to 'Back', handling_items_path %>

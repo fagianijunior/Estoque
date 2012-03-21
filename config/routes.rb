@@ -1,4 +1,8 @@
 Estoque::Application.routes.draw do
+  resources :handling_items
+
+  resources :material_handlings
+
   root to: 'static_pages#inicio'
 
   resources :material_storage_locations

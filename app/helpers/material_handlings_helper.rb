@@ -1,0 +1,2 @@
+module MaterialHandlingsHelper
+end

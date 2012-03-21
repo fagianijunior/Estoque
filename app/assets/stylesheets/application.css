@@ -455,7 +455,7 @@ footer {
 }
 
 .simple_form div.boolean, .simple_form input[type='submit'] {
-  margin-left: 132px;
+  	margin-left: 132px;
 }
 
 .simple_form div.boolean label, .simple_form label.collection_radio {
