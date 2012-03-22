@@ -1,19 +1,6 @@
 <h1>Listing units</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-  </tr>
-
-<% @units.each do |unit| %>
-  <tr>
-    <td><%= unit.name %></td>
-    <td><%= link_to 'Destroy', unit, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="unit_form"><%= render partial: 'form' %></div>
+<div id="units_list"><%= render partial: "units" %></div>
 
 <br />
-
-<%= link_to 'New Unit', new_unit_path %>

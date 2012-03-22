@@ -1,40 +1,31 @@
 class UnitsController < ApplicationController
+
+  respond_to :html, :js, :json
+  before_filter :load
+
+  def load
+    @units = Unit.all
+    @unit = Unit.new
+  end
   # GET /units
   # GET /units.json
   def index
-    @units = Unit.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @units }
-    end
   end
 
   # GET /units/new
   # GET /units/new.json
   def new
-    @unit = Unit.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @unit }
-    end
   end
 
   # POST /units
   # POST /units.json
   def create
     @unit = Unit.new(params[:unit])
-
-    respond_to do |format|
-      if @unit.save
-        format.html { redirect_to units_url, notice: "Unidade criada com sucesso!" }
-        format.json { render json: @unit, status: :created, location: @unit }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @unit.errors, status: :unprocessable_entity }
-      end
+    if @unit.save
+      flash[:notice] = "Unidade criada com sucesso!"
+      @units = Unit.all
     end
+    respond_with @unit 
   end
 
   # DELETE /units/1
@@ -42,10 +33,8 @@ class UnitsController < ApplicationController
   def destroy
     @unit = Unit.find(params[:id])
     @unit.destroy
-
-    respond_to do |format|
-      format.html { redirect_to units_url, notice: "'#{@unit.name}' foi deletado com sucesso!" }
-      format.json { head :no_content }
-    end
+    flash[:notice] = "'#{@unit.name}' foi deletado com sucesso!"
+    @units = Unit.all
+    respond_with @unit
   end
 end

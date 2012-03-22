@@ -1,19 +1,6 @@
 <h1>Listing storage_locations</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-  </tr>
-
-<% @storage_locations.each do |storage_location| %>
-  <tr>
-    <td><%= storage_location.name %></td>
-    <td><%= link_to 'Destroy', storage_location, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="storage_form"><%= render partial: "form" %></div>
+<div id="storages_list"><%= render partial: "storage_locations" %></div>
 
 <br />
-
-<%= link_to 'New Storage location', new_storage_location_path %>

@@ -1,0 +1,17 @@
+<% if @material.errors.any? -%>
+	$(".flash").hide(300);
+	$(".erro").hide(300);
+	$(".erro").html("<%= escape_javascript('Houve um erro ao tentar adicionar o material') %>");
+	$(".erro").show(300);
+<% else -%>
+	$(".erro").hide(300);
+	$(".flash").hide(300);
+	$(".flash").html("<%= escape_javascript(flash[:notice]) %>");
+	$(".flash").show(300);
+	$(":input:not(input[type=submit])").val("");
+
+	$("#materials_list").hide();
+	$("#materials_list").html("<%= escape_javascript( render(partial: 'materials')) %>");
+	$("#materials_list").show();
+<% end -%>
+

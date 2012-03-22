@@ -9,11 +9,7 @@
 <body>
 <h1>Controle de Estoque</h1>
 <%= render 'layouts/nav' %>
-<% if !flash.nil? %>
-		<% flash.each do |key, value|  %>
-          <%= content_tag(:div, value, class: "flash #{key}") %>
-        <% end %>
-<% end %>
+<div class="flash notice" style="display: none;"></div>
 <div class="content">
 	<%= yield %>
 </div>

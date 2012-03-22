@@ -1,20 +1,8 @@
 <nav>
 	<ul id="nav">
 		<li><%= link_to 'Início', root_path %></li>
-		<li>
-			<%= link_to 'Materiais', materials_path %>
-			<ul>
-				<li><%= link_to 'Novo', new_material_path %></li>
-				<li><%= link_to 'Listar', materials_path %></li>
-			</ul>
-		</li>
-		<li>
-			<%= link_to 'Unidades', units_path %>
-			<ul>
-				<li><%= link_to 'Novo', new_unit_path %></li>
-				<li><%= link_to 'Listar', units_path %></li>
-			</ul>
-		</li>
+		<li><%= link_to 'Materiais', materials_path %></li>
+		<li><%= link_to 'Unidades', units_path %></li>
 		<li><%= link_to 'Locais de Estoque', storage_locations_path %></li>
 		<li><%= link_to 'Lotes (?)', batches_path %></li>
 		<li><%= link_to 'Estoque (?)', material_storage_locations_path %></li>

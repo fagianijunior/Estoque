@@ -1,0 +1,5 @@
+$(".flash").html("<%= escape_javascript(flash[:notice])%>");
+$(".flash").show(300); 
+$("#storages_list").hide(300);
+$("#storages_list").html("<%= escape_javascript( render(partial: 'storage_locations') ) %>");
+$("#storages_list").show(300);

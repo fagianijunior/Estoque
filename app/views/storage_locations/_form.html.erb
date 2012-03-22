@@ -1,5 +1,6 @@
-<%= simple_form_for(@storage_location) do |f| %>
+<%= simple_form_for(@storage_location, remote: true) do |f| %> 
   <%= f.error_notification %>
+  <div class="erro" style="display: none;"></div>
 
   <div class="form-inputs">
     <%= f.input :name %>

@@ -1,0 +1,6 @@
+
+$(".flash").html("<%= escape_javascript(flash[:notice])%>");
+$(".flash").show(300); 
+$("#units_list").hide(300);
+$("#units_list").html("<%= escape_javascript( render(partial: 'units') ) %>");
+$("#units_list").show(300);

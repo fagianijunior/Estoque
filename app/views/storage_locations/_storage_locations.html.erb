@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+
+<% @storage_locations.each do |storage_location| %>
+  <tr>
+    <td><%= storage_location.name %></td>
+    <td><%= link_to 'Destroy', storage_location, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+  </tr>
+<% end %>
+</table>
