@@ -2,8 +2,14 @@
 
 <p>
   <b>Handling date:</b>
-  <%= @material_handling.handling_date %>
+  <%= @material_handling.handling_date.to_s_br %>
 </p>
+
+<ol>
+	<% for items in @material_handling.handling_items %>
+		<li><%= items.material.name %> | <%= "Q: #{items.quantity.to_i} #{items.material.unit.name}(s)" %> | <%= dinheiro(items.price) %></li>
+	<% end %>
+</ol>	
 
 
 <%= link_to 'Edit', edit_material_handling_path(@material_handling) %> |

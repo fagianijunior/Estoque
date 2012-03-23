@@ -1,0 +1,10 @@
+  	<!-- código referente ao: ["render partial: 'itens'"] do partial form. -->
+  	<div class="form-inputs nested">
+  		<!-- esta associação provavelmente está errada... -->
+  		<%= f.association :material, include_blank: false %>
+  		<%= f.input :quantity %>
+  		<%= f.input :price %>
+  		<!-- Campo _destroy utilizado para deletar itens dos nested forms -->
+  		<%= f.check_box :_destroy, class: "destroy" %>
+  		<%= f.label :_destroy, "Remover Item?", class: "destroy" %>	
+  	</div>

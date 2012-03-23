@@ -9,6 +9,7 @@ gem 'mysql2'
 gem 'therubyracer'
 gem 'libv8', '3.3.10.4'
 gem 'simple_form'
+gem 'brazilian-rails'
 
 
 # Gems used only for assets and not required

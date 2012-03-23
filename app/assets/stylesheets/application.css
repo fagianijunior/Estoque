@@ -354,6 +354,7 @@ a:hover {
 	color: #D8000C;
 	background: #FFBABA;
 	border: #D8000C;
+	margin-bottom: 10px;
 }
 
 /* Menu de Navegação */
@@ -448,7 +449,7 @@ footer {
   margin-bottom: 10px;
 }
 
-.simple_form input[type="text"] {
+.simple_form input[type="text"], input[type="number"] {
 	outline: none;
 	border: 1px solid #CCC;
 	padding: 4px 5px;
@@ -457,7 +458,7 @@ footer {
 	-o-border-radius: 4px;
 }
 
-.simple_form input[type="text"]:hover {
+.simple_form input[type="text"]:hover, input[type="number"]:hover {
 	border: 1px solid #888;
 }
 
@@ -500,6 +501,43 @@ footer {
   font-style: italic;
 }
 
+.simple_form .btn {
+	margin-top: 20px;
+}
+
+.simple_form h2 {
+	margin-left: 80px;
+	margin-top: 10px;
+	position: relative;
+	right: 70px;
+	top: 10px;
+}
+
+.simple_form .destroy {
+	font-style: italic;
+	font-size: 10px;
+}
+
+.simple_form input[type="checkbox"] {
+	width: 25px;
+	height: 25px;
+}
+
+/* Nested Fields */
+
+.nested {
+	border-top: 1px solid #CCC;
+	padding: 5px 10px;
+}
+
+
+.nested:hover {
+	background: #E8E8E8;
+}
+
+.nested .input {
+}
+
 /* Listagem (Index) - Tabelas */
 
 .content table {
@@ -539,4 +577,10 @@ footer {
 
 .content table a:active {
 	background: #888;
+}
+
+.field_with_errors {
+  background: #FFBABA;
+  padding: 8px 10px !important;
+  border-radius: 5px;
 }
