@@ -11,13 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120321023747) do
-
-  create_table "batches", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120324191154) do
 
   create_table "handling_items", :force => true do |t|
     t.integer  "material_handling_id"
@@ -37,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20120321023747) do
   create_table "material_storage_locations", :force => true do |t|
     t.integer  "material_id"
     t.integer  "storage_location_id"
-    t.integer  "batch_id"
     t.float    "quantity"
     t.float    "price"
     t.datetime "created_at",          :null => false

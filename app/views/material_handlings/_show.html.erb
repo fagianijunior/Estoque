@@ -11,6 +11,10 @@
 	<% end %>
 </ol>	
 
+<p><b>Total: </b><%= dinheiro(@material_handling.totalize) %></p>
 
-<%= link_to 'Edit', edit_material_handling_path(@material_handling) %> |
-<%= link_to 'Back', material_handlings_path %>
+<div class="ajax-actions">
+	<%= link_to 'Edit', edit_material_handling_path(@material_handling), remote: true %> |
+	<%= link_to_function('x', "close_form()", class: "close") %>
+</div>
+

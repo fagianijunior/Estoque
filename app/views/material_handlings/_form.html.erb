@@ -1,6 +1,7 @@
 <!-- Usando a Gem Simple Form para desenhar os formulários -->
 <%= simple_form_for(@material_handling) do |f| %>
   <%= f.error_notification %>
+  <div class="erro" style="display: none;"></div>
   <!-- Cria o campo principal do Handling Material (a data) -->
   <div class="form-inputs">
     <%= f.input :handling_date %>

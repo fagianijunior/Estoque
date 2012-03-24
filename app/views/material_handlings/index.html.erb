@@ -1,23 +1,10 @@
 <h1>Listing material_handlings</h1>
 
-<table>
-  <tr>
-    <th>Handling date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @material_handlings.each do |material_handling| %>
-  <tr>
-    <td><%= material_handling.handling_date.to_s_br %></td>
-    <td><%= link_to 'Show', material_handling %></td>
-    <td><%= link_to 'Edit', edit_material_handling_path(material_handling) %></td>
-    <td><%= link_to 'Destroy', material_handling, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div id="material_handling_form"><%= render partial: 'form' %></div>
+<div id="material_handlings_list"><%= render 'material_handlings' %></div>
+<div id="material_info" style="display: none;"></div>
 
 <br />
 
 <%= link_to 'New Material handling', new_material_handling_path %>
+
