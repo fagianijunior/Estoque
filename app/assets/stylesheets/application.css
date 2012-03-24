@@ -523,6 +523,10 @@ footer {
 	height: 25px;
 }
 
+.simple_form a {
+	margin-left: 130px;
+}
+
 /* Nested Fields */
 
 .nested {

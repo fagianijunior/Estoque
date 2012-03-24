@@ -25,7 +25,7 @@ class MaterialHandlingsController < ApplicationController
   # GET /material_handlings/new.json
   def new
     @material_handling = MaterialHandling.new
-    2.times {@material_handling.handling_items.build}
+    @material_handling.handling_items.build
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @material_handling }

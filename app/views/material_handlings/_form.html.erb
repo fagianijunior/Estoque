@@ -5,13 +5,14 @@
   <div class="form-inputs">
     <%= f.input :handling_date %>
   </div>
-
-  <!-- Nested fields. Desenha os campos dos itens (ver _itens.html.erb e controllers/material_handlings action new) -->
-  <!-- o partial irá precisar da variável item, então ela é passada com o nome f para a outra página -->
+  
   <h2>Itens</h2>
+  
   <%= f.simple_fields_for :handling_items do |item| %>
-  	<%= render partial: 'itens', locals: { f: item } %>
+    <%= render partial: 'handling_item_fields', locals: { f: item } %>
   <% end %>
+
+  <%= link_to_add_fields "Adicionar um novo item",  f, :handling_items %>
 
   <div class="form-actions">
     <%= f.button :submit %>
