@@ -10,7 +10,7 @@ gem 'therubyracer'
 gem 'libv8', '3.3.10.4'
 gem 'simple_form'
 gem 'brazilian-rails'
-
+gem 'foreigner'
 
 # Gems used only for assets and not required
 # in production environments by default.

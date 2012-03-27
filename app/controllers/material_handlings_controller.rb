@@ -11,7 +11,7 @@ class MaterialHandlingsController < ApplicationController
   # GET /material_handlings
   # GET /material_handlings.json
   def index
-    @material_handling.handling_items.build
+    @material_handling.material_handling_items.build
   end
 
   # GET /material_handlings/1

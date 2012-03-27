@@ -1,4 +1,4 @@
 require 'test_helper'
 
-class HandlingItemsHelperTest < ActionView::TestCase
+class MaterialHandlingItemsHelperTest < ActionView::TestCase
 end
