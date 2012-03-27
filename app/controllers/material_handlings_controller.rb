@@ -11,6 +11,8 @@ class MaterialHandlingsController < ApplicationController
   # GET /material_handlings
   # GET /material_handlings.json
   def index
+    @storage_locations = StorageLocation.all
+    @materials = Material.all
     @material_handling.material_handling_items.build
   end
 
