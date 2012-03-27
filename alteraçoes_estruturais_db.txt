@@ -1,0 +1,21 @@
+Renomeada tabela handling_items para material_handling_items
+
+
+rails d scaffold batch
+Removida tabela batches (migration)
+removida coluna materials_storage_locations.batch_id (migration)
+
+removido belongs_to batches na classe model/materials_storage_locations.rb
+removido     <%= f.input :batch_id %> da classe views/magterial_storage_locations/_form.html.erb
+removido <th>Batch</th>    e    <td><%= material_storage_location.batch_id %></td> da classe views/magterial_storage_locations/index.html.erb
+
+removido
+<p>
+  <b>Batch:</b>
+  <%= @material_storage_location.batch_id %>
+</p>  da classe views/magterial_storage_locations/show.html.erb
+
+alterada todas as referencias de handling_item para material_handling_items
+===============
+alterada coluna material_handling_items.material_id para material_handling_items.materials_storage_locations_id
+ 

@@ -1,0 +1,6 @@
+  	<div class="form-inputs nested">
+  		<%= f.association :material_storage_location, include_blank: false %>
+  		<%= f.input :quantity %>
+  		<%= f.input :price %>
+  		<%= link_to_remove_fields "x", f %>
+  	</div>
