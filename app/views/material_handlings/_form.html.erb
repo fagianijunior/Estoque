@@ -9,11 +9,11 @@
   
   <h2>Itens</h2>
   
-  <%= f.simple_fields_for :handling_items do |item| %>
-    <%= render partial: 'handling_item_fields', locals: { f: item } %>
+  <%= f.simple_fields_for :material_handling_items do |item| %>
+    <%= render partial: 'material_handling_item_fields', locals: { f: item } %>
   <% end %>
 
-  <%= link_to_add_fields "Adicionar um novo item",  f, :handling_items %>
+  <%= link_to_add_fields "Adicionar um novo item", f, :material_handling_items %>
 
   <div class="form-actions">
     <%= f.button :submit %>

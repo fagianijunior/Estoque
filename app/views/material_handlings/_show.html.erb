@@ -7,7 +7,7 @@
 
 <ol>
 	<% for items in @material_handling.handling_items %>
-		<li><%= items.material.name %> | <%= "Q: #{items.quantity.to_i} #{items.material.unit.name}(s)" %> | <%= dinheiro(items.price) %></li>
+		<li><%= items.material_storage_location.material.name %> | <%= "Q: #{items.quantity.to_i} #{items.material_storage_location.material.unit.name}(s)" %> | <%= dinheiro(items.price) %></li>
 	<% end %>
 </ol>	
 
