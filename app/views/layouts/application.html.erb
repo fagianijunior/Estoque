@@ -9,13 +9,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Controle de Estoque</h1>
-<%= render 'layouts/nav' %>
-<div class="flash notice" style="display: none;"></div>
-<div class="content">
-	<%= yield %>
+<div class="wrapper">
+	<div class="main">
+		<h1>Controle de Estoque</h1>
+		<%= render 'layouts/nav' %>
+		<div class="flash notice" style="display: none;"></div>
+		<div class="content">
+			<%= yield %>
+		</div>
+		</body>
+	</div>
 </div>
-</body>
 <footer>
 	<p>Controle de estoque em Rails 3 - MAR/2012</p>
 </footer>

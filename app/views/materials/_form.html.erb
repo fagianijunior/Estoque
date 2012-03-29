@@ -3,11 +3,11 @@
   <div class="erro" style="display:none;"></div>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.association :unit, include_blank: false %>
+    <%= f.input :name, label: "Nome" %>
+    <%= f.association :unit, label: "Unidade", include_blank: false %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Adicionar" %>
   </div>
 <% end %>

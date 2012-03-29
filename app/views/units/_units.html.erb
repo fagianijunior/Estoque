@@ -1,13 +1,13 @@
 <table>
   <tr>
-    <th>Name</th>
+    <th>Nome</th>
     <th></th>
   </tr>
 
 <% @units.each do |unit| %>
   <tr>
     <td><%= unit.name %></td>
-    <td><%= link_to 'Destroy', unit, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <td><%= link_to 'Deletar', unit, confirm: 'Tem certeza?', method: :delete, remote: true %></td>
   </tr>
 <% end %>
 </table>
