@@ -31,21 +31,32 @@ function close_form() {
 	})	
 }
 
-function show_modal(form_name, titulo, altura, largura, uniq) {
- // Valor default para uniq = false (Não é modal)
- uniq = typeof uniq !== 'undefined' ? uniq : true;
+function show_modal(form_name, titulo, altura, largura) {
 	$(form_name).dialog({ 
 	    autoOpen: false, 
 	    title: titulo,
 	    hide: 'fade',
 	    show: 'fade',
-	    modal: uniq,
+	    modal: true,
 	    draggable: true,
 	    resizable: false,
 	    width: largura,
 	    height: altura
 	}).dialog('open');
+}
 
+function show_modal2() {
+		$('#unit_form').dialog({ 
+		    autoOpen: false, 
+		    title: 'Janela Modal',
+		    hide: 'fade',
+		    show: 'fade',
+		    modal: true,
+		    draggable: true,
+		    resizable: false,
+		    width: 500,
+		    height: 500
+		}).dialog('open');
 }
 
 $(document).ready(function(){

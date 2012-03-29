@@ -2,7 +2,6 @@
 
 <div id="storage_form"><%= render partial: "form" %></div>
 <div id="storages_list"><%= render partial: "storage_locations" %></div>
-
-<button class="show-modal"><%= link_to 'Novo Ponto de Estoque', new_storage_location_path, remote: true %></button>
+<%= button_to_function('Novo Ponto de Estoque', 'show_modal("#storage_form", "Adicionar Novo Ponto de Estoque", 200, 540)', class: "show-modal") %>
 
 <br />

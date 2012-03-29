@@ -2,6 +2,5 @@
 
 <div id="material_form"><%= render partial: 'form' %></div>
 <div id="materials_list"><%= render partial: 'materials' %></div>
-<button class="show-modal"><%= link_to 'Novo Material', new_material_path, remote: true %></button>
-
+<%= link_to 'Novo Material', new_material_path, remote: true, class: "show-modal" %>
 <br />
