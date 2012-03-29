@@ -12,19 +12,19 @@
   /*Hide the div post_errors*/
   $(".erro").hide(300); 
 
-  $(".flash").hide(300);
+  $(".flash").fadeOut(200);
 
   /*Update the html of the div flash_notice with the new one*/
   $(".flash").html("<%= escape_javascript(flash[:notice])%>");
 
   /*Show the flash_notice div*/
-   $(".flash").show(300); 
+   $(".flash").fadeIn(200); 
 
   /*Clear the entire form*/
-  $(":input:not(input[type=submit])").val("");
+  $(":input[type='text']").val("");
 
   /*Replace the html of the div post_lists with the updated new one*/
-  $("#units_list").hide();
+  $("#units_list").fadeOut(200);
   $("#units_list").html("<%= escape_javascript( render(partial: 'units') ) %>");
-  $("#units_list").show();
+  $("#units_list").fadeIn(200);
 <% end -%>

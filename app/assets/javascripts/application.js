@@ -30,3 +30,26 @@ function close_form() {
 		$('#material_info').hide(300);
 	})	
 }
+
+function show_modal(form_name, titulo, altura, largura, uniq) {
+ // Valor default para uniq = false (Não é modal)
+ uniq = typeof uniq !== 'undefined' ? uniq : true;
+	$(form_name).dialog({ 
+	    autoOpen: false, 
+	    title: titulo,
+	    hide: 'fade',
+	    show: 'fade',
+	    modal: uniq,
+	    draggable: true,
+	    resizable: false,
+	    width: largura,
+	    height: altura
+	}).dialog('open');
+
+}
+
+$(document).ready(function(){
+  $('#unit_form').hide();
+  $('#material_form').hide();
+  $('#storage_form').hide();
+});

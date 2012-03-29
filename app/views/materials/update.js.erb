@@ -7,7 +7,7 @@
   $(".flash").html("<%= escape_javascript(flash[:notice])%>");
   $(".flash").show(300);
   $(":input:not(input[type=submit])").val("");
-  $("#materials_list").hide(300);
+  $("#materials_list").fadeOut(200);
   $("#materials_list").html("<%= escape_javascript( render(partial: "materials") ) %>");
-  $("#materials_list").show(300);
+  $("#materials_list").fadeIn(200);
 <% end -%>

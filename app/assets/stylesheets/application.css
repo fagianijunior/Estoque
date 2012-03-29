@@ -315,6 +315,7 @@ body {
 
 a, a:visited {
 	color: #333;
+	text-decoration: none;
 }
 
 a:hover {
@@ -431,10 +432,11 @@ footer {
 /* Formulário Simple Form */
 
 .simple_form {
-	width: 700px;
+	width: 500px;
 	border: 1px solid #CCC;
 	margin-bottom: 20px;
 	padding: 20px 0px;
+	overflow: none;
 }
 
 .simple_form label {
@@ -456,6 +458,7 @@ footer {
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-o-border-radius: 4px;
+	width: 200px;
 }
 
 .simple_form input[type="text"]:hover, input[type="number"]:hover {
@@ -527,20 +530,6 @@ footer {
 	margin-left: 130px;
 }
 
-/* Nested Fields */
-
-.nested {
-	border-top: 1px solid #CCC;
-	padding: 5px 10px;
-}
-
-.nested:hover {
-	background: #E8E8E8;
-}
-
-.nested .input {
-}
-
 /* Listagem (Index) - Tabelas */
 
 .content table {
@@ -587,3 +576,37 @@ footer {
   padding: 8px 10px !important;
   border-radius: 5px;
 }
+
+/* Botão Show Modal */
+
+.show-modal {
+  background: #e3e3e3;
+  border: 1px solid #bbb;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
+  line-height: 1;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  padding: 6px 0 7px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  width: 150px; }
+  .show-modal:hover {
+    background: #d9d9d9;
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #222;
+    cursor: pointer; }
+  .show-modal:active {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    box-shadow: inset 0 0 1px 1px #e3e3e3;
+    color: #000; }

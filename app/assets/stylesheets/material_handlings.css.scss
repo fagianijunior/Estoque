@@ -32,3 +32,17 @@
 .remove-fields:hover {
 	background: #70002D;
 }
+
+/* Nested Fields */
+
+.nested {
+	border-top: 1px solid #CCC;
+	padding: 5px 10px;
+}
+
+.nested:hover {
+	background: #E8E8E8;
+}
+
+.nested .input {
+}
