@@ -11,7 +11,10 @@
 <body>
 <div class="wrapper">
 	<div class="main">
-		<h1 title="Controle de Estoque em Rails 3">Controle de Estoque</h1>
+		<%= image_tag('logo_ror.png', { id: 'logo-ror', title: "Ruby on Rails 3.2" }) %>
+		<%= link_to 'https://github.com/HolyTx/Estoque', target: '_blank' do %>
+			<h1 title="Controle de Estoque em Rails 3">Controle de Estoque</h1>
+		<% end %>
 		<%= render 'layouts/nav' %>
 		<div class="flash notice" style="display: none;"></div>
 		<div class="content">

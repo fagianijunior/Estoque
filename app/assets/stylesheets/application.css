@@ -239,15 +239,28 @@ h1, h2, h3, h4, h5 	{ margin: 25px; margin-left: 20px; text-shadow: 0 1px 3px rg
 html, body 			{ height: 100%; }
 .wrapper 			{ min-height: 100%; }
 .main 				{ padding-bottom: 50px; }
-a, a:visited 		{ color: #333; text-decoration: none; }
+a, a:visited 		{ color: #333; text-decoration: none; -webkit-transition: all 0.2s ease; -moz-transition: all 0.2s ease; }
 a:hover 			{ color: black; }
 body 				{ width: 960px; margin: auto; background: url('bg.png'); }
+
+#logo-ror {
+	position: absolute;
+	right: 20px; 
+	top: 20px;
+	opacity: .4;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease; }
+
+	#logo-ror:hover {
+		opacity: 1;
+		cursor: pointer; }
 
 h1 {
 	margin: 60px 0;
 	font-size: 48px;
 	cursor: pointer;
-	-webkit-transition: all 0.3s ease; }
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease; }
 
 	h1:hover {
 		text-shadow: 0 1px 60px rgba(0,0,0,0.2); }
@@ -449,13 +462,10 @@ nav {
 /* Listagem (Index) - Tabelas */
 
 .content table {
-	margin-left: 20px;
-	width: 700px;
-	border: 1px solid #CCC;
-	border-collapse: separate;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-o-border-radius: 5px; }
+	width: 100%;
+	border-top: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+	border-collapse: separate; }
 
 	.content table th {
 		border-bottom: 1px dashed #CCC;
@@ -497,8 +507,7 @@ nav {
 
 /* Botão Show Modal */
 
-.show-modal {
-  margin-left: 20px;
+.show-modal, .form-actions .btn {
   display: block;
   background: #e3e3e3;
   border: 1px solid #bbb;
@@ -511,33 +520,42 @@ nav {
   color: #333;
   font: bold 12px "helvetica neue", helvetica, arial, sans-serif;
   line-height: 1;
+  margin: auto;
   margin-top: 20px;
   margin-bottom: 0px;
   padding: 6px 0 7px;
   text-align: center;
   text-shadow: 0 1px 0 #fff;
-  width: 150px; }
-  .show-modal:hover {
+  width: 250px; }
+  .show-modal:hover, .form-actions .btn:hover {
     background: #d9d9d9;
     -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
     -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
     box-shadow: inset 0 0 1px 1px #eaeaea;
     color: #222;
     cursor: pointer; }
-  .show-modal:active {
+  .show-modal:active,.form-actions .btn:active {
     background: #d0d0d0;
     -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
     -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
     box-shadow: inset 0 0 1px 1px #e3e3e3;
-    color: #000; }
+    color: #000;
+    margin-top: 23px; }
 
 /* Search Field */
 
 .pesquisa {
+	width: 94%;
 	padding: 5px 10px;
 	margin-bottom: 15px;
 	margin-left: 20px;
-}
+	background: #DDD;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px; }
+
+.pesquisa .search-input {
+	width: 200px; }
 
 .clear-field {
 	border: none; 
@@ -547,23 +565,28 @@ nav {
 	border-radius: 7px;
 	-moz-border-radius: 7px;
 	-o-border-radius: 7px;
-	font-weight: bold; }
+	font-weight: bold;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	color: #70002D; }
 
 	.clear-field:hover {
-		background: #70002D; }
+		background: #70002D;
+		color: white; }
 
 /* Paginação */
 
 .apple_pagination {
-  width: 600px;
+  margin-left: 0;
+  width: 100%;
   background: #f1f1f1;
   text-align: center;
-  padding: 1em;
+  padding: 1em 0;
   cursor: default; }
   .apple_pagination a, .apple_pagination span {
     padding: 0.2em 0.3em; }
   .apple_pagination .disabled {
-    color: #aaaaaa; }
+    color: #ddd; }
   .apple_pagination .current {
     font-style: normal;
     font-weight: bold;
@@ -579,9 +602,9 @@ nav {
   .apple_pagination a {
     text-decoration: none;
     padding: 3px;
-    color: black; }
+    color: #999em; }
     .apple_pagination a:hover, .apple_pagination a:focus {
-      text-decoration: underline; }
+      text-shadow: 0 0 10px rgba(0,0,0,1); }
 
 /* Sobrescreve as configurações do jQuery */
 
