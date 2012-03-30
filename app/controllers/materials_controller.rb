@@ -4,7 +4,7 @@ class MaterialsController < ApplicationController
   before_filter :load
 
   def load
-    @materials = Material.all
+    @materials = Material.search(params[:pesquisa]).paginate(per_page: 10, page: params[:page], order: 'name')
     @material = Material.new
   end
 
@@ -29,7 +29,7 @@ class MaterialsController < ApplicationController
     @material = Material.new(params[:material])
     if @material.save
       flash[:notice] = "Material criado com sucesso!"
-      @materials = Material.all
+      @materials = paginate
     end
     respond_with @material
   end
@@ -41,7 +41,7 @@ class MaterialsController < ApplicationController
 
     if @material.update_attributes(params[:material])
       flash[:notice] = "Material atualizado com sucesso!"
-      @materials = Material.all
+      @materials = paginate
     end
     respond_with @material
   end
@@ -52,7 +52,12 @@ class MaterialsController < ApplicationController
     @material = Material.find(params[:id])
     @material.destroy
     flash[:notice] = "#{@material.name} foi deletado com sucesso!" 
-    @materials = Material.all 
+    @materials = paginate
     respond_with @material
   end
+
+  private
+    def paginate
+       result = Material.paginate(page: params[:page], per_page: 10, order: 'name')
+    end    
 end

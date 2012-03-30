@@ -24,13 +24,13 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g")
   $(link).before(content.replace(regexp, new_id));
 }
-
+// Fecha o formulário Show do Material Handlings
 function close_form() {
 	$('#material_info').on('click', '.close', function() {
 		$('#material_info').hide(300);
 	})	
 }
-
+// Exibe as janelas para cadastro em diálogos
 function show_modal(form_name, titulo, altura, largura) {
 	$(form_name).dialog({ 
 	    autoOpen: false, 
@@ -45,22 +45,23 @@ function show_modal(form_name, titulo, altura, largura) {
 	}).dialog('open');
 }
 
-function show_modal2() {
-		$('#unit_form').dialog({ 
-		    autoOpen: false, 
-		    title: 'Janela Modal',
-		    hide: 'fade',
-		    show: 'fade',
-		    modal: true,
-		    draggable: true,
-		    resizable: false,
-		    width: 500,
-		    height: 500
-		}).dialog('open');
+function clear_field() {
+	$('.content').on('click', '.clear-field', function() {
+		$('.search-input')
+						.val("")
+						.focus();
+	});
 }
 
 $(document).ready(function(){
+  // Esconde os formulários para serem chamados como diálogo
   $('#unit_form').hide();
   $('#material_form').hide();
   $('#storage_form').hide();
+
+  // Ajax para filtro das tabelas
+  $('#search input').keyup(function() {
+  	$.get($('#search').attr('action'), $('#search').serialize(), null, 'script');
+  	return false;
+  });
 });

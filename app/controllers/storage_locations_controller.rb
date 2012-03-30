@@ -4,7 +4,7 @@ class StorageLocationsController < ApplicationController
   before_filter :load
 
   def load
-    @storage_locations = StorageLocation.all
+    @storage_locations = StorageLocation.search(params[:pesquisa]).paginate(page: params[:page], per_page: 10, order: 'name')
     @storage_location = StorageLocation.new
   end
 
@@ -24,7 +24,7 @@ class StorageLocationsController < ApplicationController
     @storage_location = StorageLocation.new(params[:storage_location])
     if @storage_location.save
       flash[:notice] = "Local criado com sucesso!"
-      @storage_locations = StorageLocation.all
+      @storage_locations = StorageLocation.paginate(page: params[:page], per_page: 10, order: 'name')
     end
     respond_with @storage_location
   end
@@ -35,7 +35,7 @@ class StorageLocationsController < ApplicationController
     @storage_location = StorageLocation.find(params[:id])
     @storage_location.destroy
     flash[:notice] = "'#{@storage_location.name}' foi deletado com sucesso!"
-    @storage_locations = StorageLocation.all
+    @storage_locations = StorageLocation.paginate(page: params[:page], per_page: 10, order: 'name')
     respond_with @storage_location
   end
 end

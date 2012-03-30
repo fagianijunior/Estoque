@@ -11,6 +11,9 @@ gem 'libv8', '3.3.10.4'
 gem 'simple_form'
 gem 'brazilian-rails'
 gem 'foreigner'
+gem 'will_paginate', '~> 3.0'
+# Forgery: Utilizado para gerar dados aleatórios para popular o banco!
+gem 'forgery', '0.5.0'
 
 # Gems used only for assets and not required
 # in production environments by default.

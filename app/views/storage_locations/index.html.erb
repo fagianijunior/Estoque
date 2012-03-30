@@ -1,7 +1,18 @@
 <h2>Pontos de Estoque</h2>
 
 <div id="storage_form"><%= render partial: "form" %></div>
+
+<div class="pesquisa">
+	<%= form_tag storage_locations_path, method: 'get', id: "search" do %>
+		<div class="inputs">
+			<%= text_field_tag "pesquisa", params[:pesquisa], { class: 'search-input', autocomplete: 'off', placeholder: "Pesquisar..."} %>
+			<%= button_to_function("x", "clear_field()", class: "clear-field") %>
+		</div>
+	<% end %>
+</div>
+
 <div id="storages_list"><%= render partial: "storage_locations" %></div>
-<%= button_to_function('Novo Ponto de Estoque', 'show_modal("#storage_form", "Adicionar Novo Ponto de Estoque", 200, 540)', class: "show-modal") %>
+<%= will_paginate @storage_locations, class: "apple_pagination" %>
+<%= button_to_function('Novo Ponto de Estoque', 'show_modal("#storage_form", "Adicionar Novo Ponto de Estoque", 190, 535)', class: "show-modal") %>
 
 <br />

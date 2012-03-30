@@ -1,6 +1,16 @@
 <h2>Unidades</h2>
 
 <div id="unit_form"><%= render partial: 'form' %></div>
+
+<div class="pesquisa">
+	<%= form_tag units_path, method: 'get', id: "search" do %>
+		<div class="inputs">
+			<%= text_field_tag "pesquisa", params[:pesquisa], { class: 'search-input', autocomplete: 'off', placeholder: "Pesquisar..."} %>
+			<%= button_to_function("x", "clear_field()", class: "clear-field") %>
+		</div>
+	<% end %>
+</div>
+
 <div id="units_list"><%= render partial: "units" %></div>
-<%= button_to_function('Nova Unidade', 'show_modal("#unit_form", "Adicionar Nova Unidade", 200, 540)', class: "show-modal") %>
+<%= button_to_function('Nova Unidade', 'show_modal("#unit_form", "Adicionar Nova Unidade", 190, 535)', class: "show-modal") %>
 <br />
