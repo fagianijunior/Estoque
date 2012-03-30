@@ -1,30 +1,23 @@
 class MaterialsController < ApplicationController
 
-  respond_to :html, :json, :js
-  before_filter :load
+  respond_to :html, :js
+  before_filter :load, except: [:create, :edit, :destroy, :update]
 
   def load
-    @materials = Material.search(params[:pesquisa]).paginate(per_page: 10, page: params[:page], order: 'name')
+    @materials = paginate
     @material = Material.new
   end
 
-  # GET /materials
-  # GET /materials.json
   def index
   end
 
-  # GET /materials/new
-  # GET /materials/new.json
   def new
   end
 
-  # GET /materials/1/edit
   def edit
     @material = Material.find(params[:id])
   end
 
-  # POST /materials
-  # POST /materials.json
   def create
     @material = Material.new(params[:material])
     if @material.save
@@ -34,8 +27,6 @@ class MaterialsController < ApplicationController
     respond_with @material
   end
 
-  # PUT /materials/1
-  # PUT /materials/1.json
   def update
     @material = Material.find(params[:id])
 
@@ -46,8 +37,6 @@ class MaterialsController < ApplicationController
     respond_with @material
   end
 
-  # DELETE /materials/1
-  # DELETE /materials/1.json
   def destroy
     @material = Material.find(params[:id])
     @material.destroy
@@ -58,6 +47,6 @@ class MaterialsController < ApplicationController
 
   private
     def paginate
-       result = Material.paginate(page: params[:page], per_page: 10, order: 'name')
+       result = Material.search(params[:pesquisa]).paginate(page: params[:page], per_page: 10, order: 'name')
     end    
 end

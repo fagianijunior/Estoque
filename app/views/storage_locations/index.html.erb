@@ -3,12 +3,7 @@
 <div id="storage_form"><%= render partial: "form" %></div>
 
 <div class="pesquisa">
-	<%= form_tag storage_locations_path, method: 'get', id: "search" do %>
-		<div class="inputs">
-			<%= text_field_tag "pesquisa", params[:pesquisa], { class: 'search-input', autocomplete: 'off', placeholder: "Pesquisar..."} %>
-			<%= button_to_function("x", "clear_field()", class: "clear-field") %>
-		</div>
-	<% end %>
+	<%= render partial: 'shared/form_search', locals: {path: storage_locations_path} %>
 </div>
 
 <div id="storages_list"><%= render partial: "storage_locations" %></div>

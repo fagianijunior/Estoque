@@ -27,6 +27,7 @@
 	background: #CCC;
 	padding: 3px 7px;
 	border-radius: 5em;
+	width: 8px;
 }
 
 .remove-fields:hover {
@@ -45,4 +46,8 @@
 }
 
 .nested .input {
+}
+
+#material_handling_form {
+	margin-left: 20px;
 }

@@ -54,10 +54,6 @@ function clear_field() {
 }
 
 $(document).ready(function(){
-  // Esconde os formulários para serem chamados como diálogo
-  $('#unit_form').hide();
-  $('#material_form').hide();
-  $('#storage_form').hide();
 
   // Ajax para filtro das tabelas
   $('#search input').keyup(function() {
