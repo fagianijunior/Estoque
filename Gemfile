@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'therubyracer'
 gem 'libv8', '3.3.10.4'
 gem 'simple_form'
-gem 'brazilian-rails'
+#gem 'brazilian-rails'
 gem 'foreigner'
 gem 'will_paginate', '~> 3.0'
 # Forgery: Utilizado para gerar dados aleatórios para popular o banco!

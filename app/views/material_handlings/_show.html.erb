@@ -2,16 +2,16 @@
 
 <p>
   <b>Handling date:</b>
-  <%= @material_handling.handling_date.to_s_br %>
+  <%= @material_handling.handling_date %>
 </p>
 
 <ol>
 	<% for items in @material_handling.handling_items %>
-		<li><%= items.material_storage_location.material.name %> | <%= "Q: #{items.quantity.to_i} #{items.material_storage_location.material.unit.name}(s)" %> | <%= dinheiro(items.price) %></li>
+		<li><%= items.material_storage_location.material.name %> | <%= "Q: #{items.quantity.to_i} #{items.material_storage_location.material.unit.name}(s)" %> | <%= items.price %></li>
 	<% end %>
 </ol>	
 
-<p><b>Total: </b><%= dinheiro(@material_handling.totalize) %></p>
+<p><b>Total: </b><%= @material_handling.totalize %></p>
 
 <div class="ajax-actions">
 	<%= link_to 'Edit', edit_material_handling_path(@material_handling), remote: true %> |
