@@ -10,4 +10,5 @@
   $("#materials_list").fadeOut(200);
   $("#materials_list").html("<%= escape_javascript( render(partial: "materials") ) %>");
   $("#materials_list").fadeIn(200);
+  $('#material_form').dialog('close');
 <% end -%>
