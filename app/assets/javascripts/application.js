@@ -32,7 +32,7 @@ function close_form() {
 }
 // Exibe as janelas para cadastro em diálogos
 function show_modal(form_name, titulo, altura, largura) {
-	$(form_name).dialog({ 
+	$(form_name).dialog({     
 	    autoOpen: false, 
 	    title: titulo,
 	    hide: 'fade',
@@ -40,8 +40,9 @@ function show_modal(form_name, titulo, altura, largura) {
 	    modal: true,
 	    draggable: true,
 	    resizable: false,
-	    width: largura,
-	    height: altura
+	   	width: largura,
+	    height: altura,
+	 
 	}).dialog('open');
 }
 

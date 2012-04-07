@@ -1,0 +1,31 @@
+<table id="items_table">
+  <tr>
+    <th>Local</th>
+    <th>Material</th>
+    <th>Quantidade</th>
+    <th>Preço</th>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+<% material_handling.material_handling_items.each do |item| %>
+ 
+  <tr>
+  
+   	<td><%= item.storage_location.name %></td>
+   	<td><%= item.material.name %></td>
+   	<td><%= item.quantity %></td>
+   	<td><%= dinheiro(item.price) %></td>
+   	<td><%= dinheiro(item.quantity * item.price) %></td>
+   	<!-- Tem que criar no controller action específica para items
+   	<td><%= link_to 'Editar', edit_material_handling_path(item), remote: true %></td>
+    <td><%= link_to 'Deletar', item, confirm: 'Tem certeza?', method: :delete, remote: true %></td>
+    -->
+ 
+   		
+  </tr>
+
+<% end %>
+</table>
