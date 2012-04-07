@@ -1,4 +1,2 @@
-if ($('#material_info').is(':visible')) {
-	$('#material_info').hide(300);
-}
-$("#material_handling_form").html("<%= escape_javascript(render(partial: 'form'))%>");
+$("#material_handling_form").html("<%= escape_javascript(render(:partial => "form"))%>");
+show_modal('#material_handling_form', 'Adicionar nova movimentação', 550, 800)

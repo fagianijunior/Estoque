@@ -1,0 +1,5 @@
+$(".flash").html("<%= escape_javascript(flash[:notice])%>");
+$(".flash").show(300); 
+$("#material_handlings_list").fadeOut(200);
+$("#material_handlings_list").html("<%= escape_javascript( render(partial: 'material_handlings') ) %>");
+$("#material_handlings_list").fadeIn(200);

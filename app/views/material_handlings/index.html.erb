@@ -1,10 +1,14 @@
-<h2>Listing material_handlings</h2>
+<h2>Movimentação de Materiais</h2>
 
-<div id="material_handling_form"><%= render partial: 'form' %></div>
-<div id="material_handlings_list"><%= render 'material_handlings' %></div>
-<div id="material_info" style="display: none;"></div>
 
+<div id="material_handling_form"  ></div>
+
+
+<div class="pesquisa">
+	<%= render partial: 'shared/form_search', locals: {path: material_handlings_path} %>
+</div>
+
+<div id="material_handlings_list"><%= render partial: 'material_handlings' %></div>
+<%= will_paginate @material_handlings, class: "apple_pagination" %>
+<%= link_to 'Nova Movimentação', new_material_handling_path, remote: true, class: "show-modal" %>
 <br />
-
-<%= link_to 'New Material handling', new_material_handling_path %>
-
