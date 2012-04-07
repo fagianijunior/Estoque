@@ -17,8 +17,8 @@
    	<td><%= item.storage_location.name %></td>
    	<td><%= item.material.name %></td>
    	<td><%= item.quantity %></td>
-   	<td><%= dinheiro(item.price) %></td>
-   	<td><%= dinheiro(item.quantity * item.price) %></td>
+   	<td><%= (item.price) %></td>
+   	<td><%= (item.quantity * item.price) %></td>
    	<!-- Tem que criar no controller action específica para items
    	<td><%= link_to 'Editar', edit_material_handling_path(item), remote: true %></td>
     <td><%= link_to 'Deletar', item, confirm: 'Tem certeza?', method: :delete, remote: true %></td>
