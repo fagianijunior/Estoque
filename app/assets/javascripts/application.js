@@ -46,10 +46,9 @@ function show_modal(form_name, titulo, altura, largura) {
 }
 
 function clear_field() {
+	var $search_input = $('input.search-input');
 	$('.content').on('click', '.clear-field', function() {
-		$('.search-input')
-						.val("")
-						.focus();
+		$search_input.val("").focus();
 	});
 }
 

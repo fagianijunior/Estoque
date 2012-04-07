@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120321023747) do
+ActiveRecord::Schema.define(:version => 20120325225849) do
 
   create_table "material_handling_items", :force => true do |t|
     t.integer  "material_handling_id"

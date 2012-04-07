@@ -1,7 +1,7 @@
 module ApplicationHelper
-	def dinheiro(valor)
-		valor = "R$ #{valor.real}"
-	end
+	#def dinheiro(valor)
+	#	valor = "R$ #{valor.real}"
+	#end
 
 	# Nested Forms
   def link_to_remove_fields(name, f)
