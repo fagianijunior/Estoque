@@ -1,0 +1,14 @@
+<% if @material_storage_location.errors.any? -%>
+  $(".flash").hide(300);
+  $(".erro").html("<%= escape_javascript('Houve um erro ao tentar atualizar o registro')%>");
+  $(".erro").show(300);
+<% else -%>
+  $(".erro").hide(300);
+  $(".flash").html("<%= escape_javascript(flash[:notice])%>");
+  $(".flash").show(300);
+  $(":input:not(input[type=submit])").val("");
+  $("#material_storage_locations_list").fadeOut(200);
+  $("#material_storage_locations_list").html("<%= escape_javascript( render(partial: "material_storage_locations") ) %>");
+  $("#material_storage_locations_list").fadeIn(200);
+  $('#material_storage_location_form').dialog('close');
+<% end -%>

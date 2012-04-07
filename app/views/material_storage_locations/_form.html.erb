@@ -1,14 +1,18 @@
-<%= simple_form_for(@material_storage_location) do |f| %>
+<%= simple_form_for(@material_storage_location, remote: true) do |f| %>
   <%= f.error_notification %>
+  <div class="erro" style="display:none;"></div>
 
   <div class="form-inputs">
-    <%= f.input :material_id %>
-    <%= f.input :storage_location_id %>
-    <%= f.input :quantity %>
-    <%= f.input :price %>
+    <%= f.association :storage_location, label: "Local", include_blank: false %>
+    <%= f.association :material, label: "Material", include_blank: false %>
+    
+    <%= f.input :quantity, label: "Quantidade" %>
+    <%= f.input :price, label: "Preço" %>
+  
+  
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Salvar" %>
   </div>
 <% end %>
