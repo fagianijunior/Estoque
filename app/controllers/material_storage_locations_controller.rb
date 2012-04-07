@@ -1,4 +1,4 @@
-class MaterialStorageLocationController < ApplicationController
+class MaterialStorageLocationsController < ApplicationController
 
   respond_to :html, :js
   before_filter :load, except: [:create, :edit, :destroy, :update]

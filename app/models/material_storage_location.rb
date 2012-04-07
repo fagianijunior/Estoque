@@ -7,4 +7,12 @@ class MaterialStorageLocation < ActiveRecord::Base
 	  self.storage_location.name + ": " +self.material.name
 	end
 	
+	 def self.search(search)
+    if search
+      where('id =', "%#{search}%")
+    else
+      scoped
+    end
+  end
+	
 end

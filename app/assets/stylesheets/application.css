@@ -394,7 +394,7 @@ nav {
 
 /* Modal Forms */
 
-#unit_form, #material_form, #storage_form, #material_handling_form { display: none;}
+#unit_form, #material_form, #storage_form, #material_handling_form, #material_storage_location_form { display: none;}
 
 /* Formulário Simple Form */
 
