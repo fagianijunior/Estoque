@@ -55,8 +55,8 @@ function clear_field() {
 $(document).ready(function(){
 
   // Ajax para filtro das tabelas
-  $('#search input').keyup(function() {
+  $('#search input').keyup(function(e) {
   	$.get($('#search').attr('action'), $('#search').serialize(), null, 'script');
-  	return false;
+  	e.preventDefault();
   });
 });
