@@ -1,0 +1,17 @@
+<% if @material_storage_location.errors.any? -%>
+	$(".flash").hide(300);
+	$(".erro").hide(300);
+	$(".erro").html("<%= escape_javascript('Houve um erro ao tentar adicionar o local-material') %>");
+	$(".erro").show(300);
+<% else -%>
+	$(".erro").hide(300);
+	$(".flash").fadeOut(200);
+	$(".flash").html("<%= escape_javascript(flash[:notice]) %>");
+	$(".flash").fadeIn(200);
+	$(":input[type='text']").val("");
+
+	$("#material_storage_locations_list").fadeOut(200);
+	$("#material_storage_locations_list").html("<%= escape_javascript( render(partial: 'material_storage_locations')) %>");
+	$("#material_storage_locations_list").fadeIn(200);
+<% end -%>
+

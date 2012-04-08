@@ -1,0 +1,26 @@
+<!-- Usando a Gem Simple Form para desenhar os formulários -->
+<%= simple_form_for(@material_handling) do |f| %>
+  <%= f.error_notification %>
+  <div class="erro" style="display: none;"></div>
+  <!-- Cria o campo principal do Handling Material (a data) -->
+  <div class="form-inputs">
+    <%= f.input :handling_date %>
+  </div>
+  
+  <h2>Itens</h2>
+  	<table>
+  		<th>Local-Material</th>
+  		<th>Quantidade</th>
+  		<th>Preço</th>
+  		<th></th>
+  		<%= f.simple_fields_for :material_handling_items do |item| %>
+    		<%= render partial: 'material_handling_item_fields', locals: { f: item } %>
+  		<% end %>
+	</table>
+
+  <%= link_to_add_fields "Adicionar um novo item", f, :material_handling_items%>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

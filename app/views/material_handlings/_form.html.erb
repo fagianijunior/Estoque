@@ -1,21 +1,38 @@
-<!-- Usando a Gem Simple Form para desenhar os formulários -->
-<%= simple_form_for(@material_handling) do |f| %>
-  <%= f.error_notification %>
-  <div class="erro" style="display: none;"></div>
-  <!-- Cria o campo principal do Handling Material (a data) -->
-  <div class="form-inputs">
-    <%= f.input :handling_date %>
-  </div>
-  
-  <h2>Itens</h2>
-  
-  <%= f.simple_fields_for :material_handling_items do |item| %>
-    <%= render partial: 'material_handling_item_fields', locals: { f: item } %>
-  <% end %>
+<%= simple_form_for(@material_handling, remote: true) do |f| %>
 
-  <%= link_to_add_fields "Adicionar um novo item", f, :material_handling_items %>
+  		<%= f.error_notification %>
+  		<div class="erro" style="display:none;"></div>
+  		<div class="form-inputs">
+    		<%= f.input :handling_date, label: "Data" %>
+  		</div>
+  		<h2>Itens de Movimentação</h2>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+		
+	<div id='nested-items'>
+  		
+		<%= f.simple_fields_for (:material_handling_items) do |item| %>
+			<%= render partial: 'material_handling_item_fields', locals: {:f => item} %>
+		<% end %>
+	
+	</div>
+	
+
+  	<div class="form-actions-hidden">
+		<%= link_to_add_fields "Adicionar um novo item", f, :material_handling_items %>
+    	<%= f.button :submit, "Salvar" %>
+  	</div>
+
+
+  	<%#Script para adicionar botoes no rodapé do modal form e atribuir respesctivas funcoes%>
+	<script>
+		$("#material_handling_form").dialog({
+			buttons:{
+						"Adicionar Item": function(){$("a.add-fields").click();}, 
+						"Salvar": function(){$("input.btn").click();}
+					}
+		})	
+	</script>
+  
+
+  	
 <% end %>

@@ -1,13 +1,7 @@
-  	<div class="form-inputs nested">
-  		<div class="input">
-  			<%= label_tag "Local" %>
-  			<%= select_tag 'Local', options_from_collection_for_select(@storage_locations, "id", "name"), class: "handling_material[local_id]" %>
+  		<div class="form-inputs nested" >
+  			<%= f.input :material_storage_location_id, :collection => MaterialStorageLocation.all.sort_by(&:composedName) , :as => :select, :label_method => :composedName, :label => "Local-Material"%> 
+  			<%= f.input :quantity, :label => 'Quantidade' %>
+  			<%= f.input :price, :label => 'Preço' %>
+  			<%= link_to_remove_fields "x", f %>
   		</div>
-  		<div class="input">
-	  		<%= label_tag 'Material' %>
-	  		<%= select_tag 'Material', options_from_collection_for_select(@materials, "id", "name"), class: "handling_material[material_id]" %>
-	  	</div>
-  		<%= f.input :quantity %>
-  		<%= f.input :price %>
-  		<%= link_to_remove_fields "x", f %>
-  	</div>
+  

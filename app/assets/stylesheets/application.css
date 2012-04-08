@@ -221,6 +221,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
+
+
 /* =============================================================================
    Chrome Frame Prompt
    ========================================================================== */
@@ -392,7 +394,7 @@ nav {
 
 /* Modal Forms */
 
-#unit_form, #material_form, #storage_form { display: none; }
+#unit_form, #material_form, #storage_form, #material_handling_form, #material_storage_location_form { display: none;}
 
 /* Formulário Simple Form */
 
@@ -623,11 +625,9 @@ nav {
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-shadow: 0 0 10px rgba(0,0,0,1); }
 
-/* Sobrescreve as configurações do jQuery */
 
-.ui-dialog-content{
-	overflow: hidden !important;
-}
+
+
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
@@ -656,7 +656,7 @@ nav {
 .visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
 
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: hidden; visible; position: static; width: auto; }
 
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }

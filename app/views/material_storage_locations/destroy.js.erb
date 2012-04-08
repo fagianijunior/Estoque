@@ -1,0 +1,5 @@
+$(".flash").html("<%= escape_javascript(flash[:notice])%>");
+$(".flash").show(300); 
+$("#material_storage_locations_list").hide(300);
+$("#material_storage_locations_list").html("<%= escape_javascript( render(partial: 'material_storage_locations') ) %>");
+$("#material_storage_locations_list").show(300);

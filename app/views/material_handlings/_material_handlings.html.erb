@@ -1,7 +1,6 @@
 <table>
   <tr>
-    <th>Handling date</th>
-    <th></th>
+    <th>Data Movimentação</th>
     <th></th>
     <th></th>
   </tr>
@@ -9,9 +8,13 @@
 <% @material_handlings.each do |material_handling| %>
   <tr>
     <td><%= material_handling.handling_date %></td>
-    <td><%= link_to 'Show', material_handling, id: "show-material", remote: true %></td>
-    <td><%= link_to 'Edit', edit_material_handling_path(material_handling), remote: true %></td>
-    <td><%= link_to 'Destroy', material_handling, confirm: 'Are you sure?', method: :delete, remote: true %></td>
+    <td><%= link_to 'Editar', edit_material_handling_path(material_handling), remote: true %></td>
+    <td><%= link_to 'Deletar', material_handling, confirm: 'Tem certeza?', method: :delete, remote: true %></td>
+  </tr>
+  <tr>
+  	<td></td>
+  	<td colspan="2"><div id="material_handling_items"><%= render partial: 'material_handling_items', :locals =>{:material_handling => material_handling} %></div></td>
+
   </tr>
 <% end %>
 </table>

@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Local</th>
+    <th>Material</th>
+    <th>Unidade</th>
+    <th>Preço</th>
+    <th>Quantidade</th>
+    <th>Total</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @material_storage_locations.each do |msl| %>
+  <tr>
+    <td><%= msl.storage_location.name %></td>
+    <td><%= msl.material.name %></td>
+    <td><%= msl.material.unit.name %></td>
+    <td><%= msl.price%></td>
+    <td><%= msl.quantity%></td>
+    <td><%= msl.quantity * msl.price%></td>
+    <td><%= link_to 'Editar', edit_material_storage_location_path(msl), remote: true %></td>
+    <td><%= link_to 'Deletar', msl, confirm: 'Tem certeza?', method: :delete, remote: true %></td>
+  </tr>
+<% end %>
+</table>
